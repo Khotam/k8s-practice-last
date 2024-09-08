@@ -1,0 +1,1 @@
+k exec -it nginx-cm-pod -- cat /etc/spartaa/cm.cfg

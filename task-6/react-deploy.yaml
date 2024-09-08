@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: react-app
+  name: react-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: react-app
+  template:
+    metadata:
+      labels:
+        app: react-app
+    spec:
+      containers:
+      - image: visionindark/2048-react:v1-amd64
+        name: react-app
+        ports:
+          - containerPort: 3000
+       # resources:
+        #  requests:
+        #    cpu: 100m
+        #    memory: 64Mi
+        #  limits:
+        #    cpu: 200m
+        #    memory: 128Mi
+       # livenessProbe:
+        #  httpGet:
+        #    path: /
+        #    port: 3000
+        #  initialDelaySeconds: 3
+        #  periodSeconds: 3

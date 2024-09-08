@@ -1,0 +1,13 @@
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: saccount-rolebinding
+  namespace: p-xotam
+subjects:
+- kind: ServiceAccount
+  name: saccount
+  apiGroup: ""
+roleRef:
+  kind: Role
+  name: pod-deploy-full-access
+  apiGroup: rbac.authorization.k8s.io

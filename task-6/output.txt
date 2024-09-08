@@ -1,0 +1,1 @@
+react-app-9c896c967-fqjzb   1/1     Running            3 (10s ago)    79s

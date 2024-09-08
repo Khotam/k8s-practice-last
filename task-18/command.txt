@@ -1,0 +1,1 @@
+k auth can-i list clusterroles --as system:serviceaccount:p-xotam:task18-account

@@ -1,0 +1,1 @@
+k auth can-i list jobs --namespace p-xotam --as system:serviceaccount:p-xotam:task17-account

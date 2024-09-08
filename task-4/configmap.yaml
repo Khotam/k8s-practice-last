@@ -1,0 +1,8 @@
+apiVersion: v1
+data:
+  practice.cfg: |
+    http_port=":80"
+    message="Proxima Uacademy DevOps Course"
+kind: ConfigMap
+metadata:
+  name: practice

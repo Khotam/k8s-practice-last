@@ -1,0 +1,57 @@
+Name:             redis-7c68df7775-hdkn2
+Namespace:        p-xotam
+Priority:         0
+Service Account:  default
+Node:             node04/10.0.1.6
+Start Time:       Fri, 06 Sep 2024 20:59:39 +0500
+Labels:           app=redis
+                  pod-template-hash=7c68df7775
+Annotations:      cni.projectcalico.org/containerID: 1edfff414fa51b5cb28e26cd8f8c9e188ce40c5177e36cee2b0e9a7deda89de9
+                  cni.projectcalico.org/podIP: 10.233.99.209/32
+                  cni.projectcalico.org/podIPs: 10.233.99.209/32
+Status:           Running
+IP:               10.233.99.209
+IPs:
+  IP:           10.233.99.209
+Controlled By:  ReplicaSet/redis-7c68df7775
+Containers:
+  redis:
+    Container ID:   containerd://b356066cf657d7340ddbea04d37078954254c64a103479b5b27eade67f2ac491
+    Image:          redis:latest
+    Image ID:       docker.io/library/redis@sha256:eadf354977d428e347d93046bb1a5569d701e8deb68f090215534a99dbcb23b9
+    Port:           6379/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Fri, 06 Sep 2024 20:59:42 +0500
+    Ready:          True
+    Restart Count:  0
+    Readiness:      tcp-socket :6379 delay=0s timeout=1s period=10s #success=1 #failure=3
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-qjztw (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True 
+  Initialized                 True 
+  Ready                       True 
+  ContainersReady             True 
+  PodScheduled                True 
+Volumes:
+  kube-api-access-qjztw:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  84s   default-scheduler  Successfully assigned p-xotam/redis-7c68df7775-hdkn2 to node04
+  Normal  Pulling    82s   kubelet            Pulling image "redis:latest"
+  Normal  Pulled     81s   kubelet            Successfully pulled image "redis:latest" in 864ms (864ms including waiting). Image size: 45905346 bytes.
+  Normal  Created    81s   kubelet            Created container redis
+  Normal  Started    81s   kubelet            Started container redis

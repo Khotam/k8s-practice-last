@@ -1,0 +1,9 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: pod-cj-j-role
+  namespace: p-xotam
+rules:
+- apiGroups: ["", "batch"]
+  resources: ["pods", "cronjobs", "jobs"]
+  verbs: ["get", "list"]

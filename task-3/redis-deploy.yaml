@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: redis
+  name: redis
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: redis
+  template:
+    metadata:
+      labels:
+        app: redis
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: redis
+                operator: In
+                values:
+                  - "not-true"
+      containers:
+      - image: redis:latest
+        name: redis
+        ports:
+          - containerPort: 6379
+        readinessProbe:
+          tcpSocket:
+            port: 6379
+        resources: {}
+status: {}

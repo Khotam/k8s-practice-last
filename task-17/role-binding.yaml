@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: rolebinding
+  namespace: p-xotam
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: pod-cj-j-role
+subjects:
+- kind: ServiceAccount
+  name: task17-account
+  namespace: p-xotam

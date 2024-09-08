@@ -1,0 +1,6 @@
+    Environment:
+      LOG_LEVEL:    debug
+      GRPC_PORT:    80
+      ENVIRONMENT:  development
+      POD_IP:        (v1:status.podIP)
+      NODE_IP:       (v1:status.hostIP)

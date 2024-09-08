@@ -1,0 +1,30 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: podip-cron
+spec:
+  schedule: "*/3 * * * *"
+  jobTemplate:
+    metadata:
+      name: podip-cron
+    spec:
+      completions: 2
+      template:
+        metadata:
+          creationTimestamp: null
+        spec:
+          containers:
+          - image: busybox
+            name: podip-cron
+            command:
+            - /bin/sh
+            - -c
+            - echo $MY_POD_IP "my pod ip"
+            resources: {}
+            env:
+            - name: MY_POD_IP
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP
+          restartPolicy: OnFailure
+status: {}

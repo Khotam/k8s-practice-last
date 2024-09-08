@@ -1,0 +1,17 @@
+Name:         nginx-network-policy
+Namespace:    p-xotam
+Created on:   2024-09-08 14:56:54 +0500 +05
+Labels:       <none>
+Annotations:  <none>
+Spec:
+  PodSelector:     app=nginx-last
+  Allowing ingress traffic:
+    To Port: 80/TCP
+    From:
+      IPBlock:
+        CIDR: 192.168.0.0/16
+        Except: 192.168.10.10/32
+    From:
+      PodSelector: access=granted
+  Not affecting egress traffic
+  Policy Types: Ingress

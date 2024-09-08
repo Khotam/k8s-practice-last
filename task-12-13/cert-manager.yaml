@@ -1,0 +1,16 @@
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-xotam
+  namespace: cert-manager
+spec:
+  acme:
+    server: https://acme-v02.api.letsencrypt.org/directory
+    email: bakhromov17@gmail.com
+    privateKeySecretRef:
+      name: letsencrypt-xotam
+    solvers:
+    - http01:
+        ingress:
+          class: nginx
+

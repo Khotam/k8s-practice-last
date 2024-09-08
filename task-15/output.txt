@@ -1,0 +1,2 @@
+    Environment Variables from:
+      secret-info  Secret  Optional: false

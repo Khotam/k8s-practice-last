@@ -1,0 +1,8 @@
+apiVersion: v1
+data:
+  cm.cfg: |
+    var8=val8updatedinsidecontainer?
+    var9=val9
+kind: ConfigMap
+metadata:
+  name: cm-volume

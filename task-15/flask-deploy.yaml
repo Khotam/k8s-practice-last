@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: flask-app-2
+  name: flask-app-2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flask-app-2
+  template:
+    metadata:
+      labels:
+        app: flask-app-2
+    spec:
+      containers:
+      - image: nvrbckdown/something:v1
+        name: something-2
+        envFrom:
+        - secretRef:
+            name: secret-info

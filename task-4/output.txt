@@ -1,0 +1,17 @@
+Name:         practice
+Namespace:    p-xotam
+Labels:       <none>
+Annotations:  <none>
+
+Data
+====
+practice.cfg:
+----
+http_port=":80"
+message="Proxima Uacademy DevOps Course"
+
+
+BinaryData
+====
+
+Events:  <none>

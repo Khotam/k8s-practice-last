@@ -1,0 +1,5 @@
+Volumes:
+  empty-dir-volume:
+    Type:       EmptyDir (a temporary directory that shares a pod's lifetime)
+    Medium:     
+    SizeLimit:  500Mi
